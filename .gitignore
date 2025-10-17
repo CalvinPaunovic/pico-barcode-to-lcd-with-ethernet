@@ -1,0 +1,24 @@
+# Build folders
+[Bb]in/
+[Oo]bj/
+build/
+out/
+
+# VS-specific
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Temp files
+*.log
+*.tmp
+*.bak
+*.obj
+*.exe
+*.pdb
+
+# OS
+Thumbs.db
+.DS_Store
