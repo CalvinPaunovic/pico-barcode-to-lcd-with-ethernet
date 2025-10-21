@@ -1,7 +1,7 @@
 import socket
 
 # Server-IP: die feste IP deines PCs im selben Subnetz
-SERVER_IP = "192.168.0.86"
+SERVER_IP = "172.16.28.240"
 SERVER_PORT = 5000
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
