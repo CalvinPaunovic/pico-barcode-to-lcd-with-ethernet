@@ -13,8 +13,11 @@ Projekt für die Kommunikation zwischen Barcode-Scanner, LCD und CH9121-Modul
 sowie Einpflegen von den gescannten Barcodes in eine MySQL-Datenbank.
 
 - Getestet für den Raspberry Pi Pico 2 WH
-- Zusammengesetzt aus den Example-Projects der Raspberry Pi Pico Extension für VS-Code: 'picow_blink' (LED des Picos ansteuern), 'host_cdc_msc_hid' (tinyUSB-Bibliothek, um den freien Micro-USB als Host zu konfigurieren), 'lcd_1602_i2c' (Kommunikation mit dem LCD),
-  sowie https://github.com/Danielerikrust/CH9121 und https://www.waveshare.com/wiki/Pico-ETH-CH9121 (ch9121-Modul konfigurieren).
+- Zusammengesetzt aus den Example-Projects der Raspberry Pi Pico Extension für VS-Code:
+    - 'picow_blink' (LED des Picos ansteuern)
+    - 'host_cdc_msc_hid' (tinyUSB-Bibliothek, um den freien Micro-USB als Host zu konfigurieren)
+    - 'lcd_1602_i2c' (Kommunikation mit dem LCD)
+    - sowie https://github.com/Danielerikrust/CH9121 und https://www.waveshare.com/wiki/Pico-ETH-CH9121 (ch9121-Modul konfigurieren).
 
 SETUP-ANLEITUNG:
 
