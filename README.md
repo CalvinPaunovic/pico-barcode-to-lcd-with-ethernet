@@ -2,7 +2,6 @@ Finales Projekt befindet sich im Ordner pico-barcode-to-lcd-with-ethernet.
 
 - Programmierumgebung: Visual Studio Code
 - Extensions: Raspberry Pi Pico unter Visual Studio Code (Liefert die vollständige pico-sdk mit Submodule)
-- 
 - Hardware:
     - Raspberry Pi Pico 2 WH
     - Waveshare Barcode-Scanner-Modul (https://www.waveshare.com/wiki/Barcode_Scanner_Module)
@@ -19,29 +18,29 @@ sowie Einpflegen von den gescannten Barcodes in eine MySQL-Datenbank.
 
 SETUP-ANLEITUNG:
 
-1) Bootsel-Taste des Picos gedrückt halten, dann an den PC anschließen und loslassen, 
+1) Modus des CH9121 unter 'ch9121_config' in der main.c anpassen: 
+   TCP_CLIENT, TCP_SERVER, UDP_CLIENT, UDP_SERVER
+   
+2) IP-Adresse und Ports unter 'ch9121_config' in der main.c einstellen: 
+   (local_ip, gateway, subnet_mask, target_ip)
+
+3) Bootsel-Taste des Picos gedrückt halten, dann an den PC anschließen und loslassen, 
    um in den Bootloader-Modus zu gelangen.
    
-2) Rechtsklick auf CMakeLists.txt im Projekt-Explorer -> "Clean Rebuild all Projects" 
+4) Rechtsklick auf CMakeLists.txt im Projekt-Explorer -> "Clean Rebuild all Projects" 
    -> entstehende .uf2 Datei vom build-Ordner auf den Pico flashen.
    Der Pico sollte nun automatisch neustarten.
    
-3) Datenverbindung mit dem PC trennen und Pico nun über VBUS (Pin 40) und GND (Pin 3) 
+5) Datenverbindung mit dem PC trennen und Pico nun über VBUS (Pin 40) und GND (Pin 3) 
    mit Strom versorgen.
    
-4) Barcode-Scanner über Micro-USB anschließen und CH9121-Modul mit dem Header verbinden.
+6) Barcode-Scanner über Micro-USB anschließen und CH9121-Modul mit dem Header verbinden.
 
-5) LCD 1602 I2C Modul an Raspberry Pi Pico anschließen:
-   GPIO 4 (Pin 6)  -> SDA am LCD Bridge Board
-   GPIO 5 (Pin 7)  -> SCL am LCD Bridge Board
-   3.3V (Pin 36)   -> VCC am LCD Bridge Board
-   GND (Pin 38)    -> GND am LCD Bridge Board
-   
-6) Modus des CH9121 unter 'ch9121_config' einstellen: 
-   TCP_CLIENT, TCP_SERVER, UDP_CLIENT, UDP_SERVER
-   
-7) IP-Adresse und Ports unter 'ch9121_config' anpassen 
-   (local_ip, gateway, subnet_mask, target_ip)
+7) LCD 1602 I2C Modul an Raspberry Pi Pico anschließen:
+   - GPIO 4 (Pin 6)  -> SDA am LCD Bridge Board
+   - GPIO 5 (Pin 7)  -> SCL am LCD Bridge Board
+   - 3.3V (Pin 36)   -> VCC am LCD Bridge Board
+   - GND (Pin 38)    -> GND am LCD Bridge Board
    
 8) Zwischenserver mysql_bridge.py gemäß der MySQL-Datenbank konfigurieren 
    und mit 'python mysql_bridge.py' starten.
